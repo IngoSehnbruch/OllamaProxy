@@ -13,7 +13,6 @@ services:
       - "${LISTEN_PORT}:${LISTEN_PORT}"  # Map LISTEN_PORT to the host
     depends_on:
       - ollama
-    command: ["gunicorn", "-b", "0.0.0.0:${LISTEN_PORT}", "ollamaproxy:app"]
 
   ollama:
     image: ollama/ollama

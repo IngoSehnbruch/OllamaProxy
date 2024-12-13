@@ -9,3 +9,6 @@ COPY . .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Run the application
+CMD ["gunicorn", "-c", "gunicorn.conf.py", "ollamaproxy:app"]
