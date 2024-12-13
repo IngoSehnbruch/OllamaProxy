@@ -15,7 +15,7 @@ A lightweight security proxy for [Ollama](https://ollama.ai/), providing Bearer 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ingo.sehnbruch/OllamaProxy.git
+   git clone https://github.com/IngoSehnbruch/OllamaProxy.git
    cd OllamaProxy
    ```
 
