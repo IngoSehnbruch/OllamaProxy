@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  ollamaproxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - FLASK_ENV=production 
+    ports:
+      - "${LISTEN_PORT}:${LISTEN_PORT}"  # Map LISTEN_PORT to the host
+    depends_on:
+      - ollama
+    command: ["gunicorn", "-b", "0.0.0.0:${LISTEN_PORT}", "ollamaproxy:app"]
+
+  ollama:
+    image: ollama/ollama
+    ports:
+      - "${FORWARD_PORT}:${FORWARD_PORT}"
+  
